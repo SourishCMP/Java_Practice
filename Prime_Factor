@@ -1,0 +1,36 @@
+import java.util.*;
+public class Prime_Factor{
+	int num;
+	Prime_Factor(){
+		num=0;
+	}
+	public void accept() {
+		Scanner in = new Scanner(System.in);
+		System.out.println("Enter a number");
+		num=in.nextInt();
+	}
+	public boolean isPrime(int a){
+		int i,c=0;
+		for(i=1;i<=a;i++) {
+			if(a%i==0)
+				c++;
+		}
+		if(c==2)
+			return true;
+		else
+			return false;
+	}
+	public void factor() {
+		int j;
+		for(j=2;j<=num;j++) {
+			if(num%j==0) {
+			if(isPrime(j)==true)
+				System.out.println(j);
+			}	
+		}
+	}
+	public static void main(String args[]) {
+		Prime_Factor f = new Prime_Factor();
+		f.accept();
+		f.factor();
+	}
